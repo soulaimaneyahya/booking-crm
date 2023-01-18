@@ -1,11 +1,28 @@
-# booking.com
+# booking-crm
+- Booking-crm, web application, build using PHP-Laravel & inertia-vuejs.
+- MySQL DB
+- Using nginx web server, http/2.
 
 ## Project overview:
 
-<img src="./public/captures/5.png" alt="project" />
-<img src="./public/captures/7.png" alt="project" />
-<img src="./public/captures/3.png" alt="project" />
-<img src="./public/captures/2.png" alt="project" />
+<table>
+    <tr>
+        <td><img src="./public/captures/1.png" alt="project" /></td>
+        <td><img src="./public/captures/2.png" alt="project" /></td>
+   </tr> 
+    <tr>
+        <td><img src="./public/captures/3.png" alt="project" /></td>
+    <td><img src="./public/captures/2.png" alt="project" /></td></tr>
+  </tr>
+    <tr>
+        <td><img src="./public/captures/5.png" alt="project" /></td>
+        <td><img src="./public/captures/6.png" alt="project" /></td>
+   </tr> 
+    <tr>
+        <td><img src="./public/captures/7.png" alt="project" /></td>
+        <td><img src="./public/captures/8.png" alt="project" /></td>
+    </tr> 
+</table>
 
 ## Starting Project
 
