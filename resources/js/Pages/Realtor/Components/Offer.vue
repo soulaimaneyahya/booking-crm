@@ -1,0 +1,55 @@
+<template>
+  <Box>
+    <template #header>
+      Offer #{{ offer.offer_no }}
+      <span v-if="offer.accepted_at" class="dark:bg-green-900 dark:text-green-200 p-1 text-xs bg-green-200 text-green-900 rounded-md uppercase ml-1">accepted</span>
+    </template>
+
+    <section class="flex items-center justify-between">
+      <div>
+        <Price :price="offer.amount" class="text-xl" />
+
+        <div class="text-gray-500">
+          Difference <Price :price="difference" />
+        </div>
+
+        <div class="text-gray-500 text-sm">
+          Made by {{ offer.bidder.name }}
+        </div>
+
+        <div class="text-gray-500 text-sm">
+          Made on {{ madeOn }}
+        </div>
+      </div>
+      <div>
+        <Link
+          v-if="!isSold"
+          class="btn-outline text-xs font-medium mx-2"
+          :href="route('realtor.offer.accept', offer.id)"
+          as="button" method="put"
+        >
+          Accept
+        </Link>
+      </div>
+    </section>
+  </Box>
+</template>
+<script setup>
+import Box from '@/shared/Components/UI/Box.vue'
+import Price from '@/shared/Components/Price.vue'
+import { Link } from '@inertiajs/inertia-vue3'
+import { computed } from 'vue'
+
+const props = defineProps({
+  offer: Object,
+  listingPrice: Number,
+  isSold: Boolean,
+})
+const difference = computed(
+  () => props.offer.amount - props.listingPrice,
+)
+const madeOn = computed(
+  () => new Date(props.offer.created_at).toDateString(),
+)
+
+</script>
