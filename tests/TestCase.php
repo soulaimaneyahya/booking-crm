@@ -42,4 +42,16 @@ abstract class TestCase extends BaseTestCase
             'owner_id' => $id ?? $this->user()->id
         ]);
     }
+
+    public function register()
+    {
+        $params = [
+            'name' => "Hamish Woodward",
+            'username' => "takonaho",
+            'email' => "pewys@mailinator.com",
+            'password' => "pa--word",
+            'password_confirmation' => "pa--word",
+        ];
+        return $this->post("/register", $params);
+    }
 }

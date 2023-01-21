@@ -49,3 +49,6 @@ jobs:
           ./vendor/bin/phpcs app/Http/Controllers/Listing/RealtorListingImageController.php --standard=PSR2
           ./vendor/bin/phpcs app/Http/Controllers/User/NotificationController.php --standard=PSR2
           ./vendor/bin/phpcs app/Http/Controllers/User/NotificationSeenController.php --standard=PSR2
+          ./vendor/bin/phpcs app/Http/Controllers/Auth/LoginController.php --standard=PSR2
+          ./vendor/bin/phpcs app/Http/Controllers/Auth/RegisterController.php --standard=PSR2
+          ./vendor/bin/phpcs app/Http/Controllers/Auth/LogoutController.php --standard=PSR2

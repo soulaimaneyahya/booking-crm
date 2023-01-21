@@ -15,6 +15,6 @@ class LogoutController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('listings.index');
+        return redirect()->route('listings.index')->with('success', 'Logout Success!');
     }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
@@ -19,10 +19,10 @@ class LoginController extends Controller
         // @method static bool attempt(array $credentials = [], bool $remember = false)
         if (!Auth::attempt($request->validated(), true)) {
             throw ValidationException::withMessages([
-                'email' => 'These credentials do not match our records.'
+                'email' => 'These credentials do not match our records.',
             ]);
         }
         $request->session()->regenerate();
-        return redirect()->route('listings.index');
+        return redirect()->route('listings.index')->with('success', 'Login Success!');
     }
 }
