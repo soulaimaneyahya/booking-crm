@@ -24,7 +24,6 @@ class RealtorListingImageTest extends TestCase
 
         $this->path = public_path('img/1.jpg');
     }
-
     public function testStoreValid()
     {
         $listing = $this->listing($this->user->id);

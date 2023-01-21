@@ -27,10 +27,6 @@ class RealtorListingAcceptOfferController extends Controller
         $listing->offers()->except($offer)
             ->update(['rejected_at' => now()]);
 
-        return redirect()->back()
-            ->with(
-                'success',
-                "Offer #{$offer->offer_no} accepted, other offers rejected"
-            );
+        return redirect()->back()->with('success', "Offer #{$offer->offer_no} accepted, other offers rejected");
     }
 }

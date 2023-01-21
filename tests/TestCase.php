@@ -3,6 +3,7 @@
 namespace Tests;
 
 use App\Models\Listing;
+use App\Models\Offer;
 use App\Models\User;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
@@ -10,6 +11,7 @@ abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
 
+    // attributes
     protected $loremListing = [
         'city' => 'Tetouan',
         'street' => 'Tetouan, Rue mohamed 6',
@@ -21,6 +23,7 @@ abstract class TestCase extends BaseTestCase
         'price' => 1000000,
     ];
 
+    // users
     protected function user(): User
     {
         return User::factory()->create();
@@ -36,6 +39,7 @@ abstract class TestCase extends BaseTestCase
         return User::factory()->create();
     }
 
+    // listings
     protected function listing($id = null)
     {
         return Listing::factory()->lorem()->create([
@@ -43,7 +47,17 @@ abstract class TestCase extends BaseTestCase
         ]);
     }
 
-    public function register()
+    // offers
+    protected function offer($listing_id, $bidder_id)
+    {
+        return Offer::factory()->create([
+            'listing_id' => $listing_id,
+            'bidder_id' => $bidder_id,
+        ]);
+    }
+
+    // auth
+    protected function register()
     {
         $params = [
             'name' => "Hamish Woodward",

@@ -31,7 +31,7 @@ class ListingOfferController extends Controller
         );
     }
 
-    private function validationException(Listing $listing)
+    protected function validationException(Listing $listing)
     {
         if ($listing->offers()->offerMade()->first()) {
             $error = ValidationException::withMessages([
